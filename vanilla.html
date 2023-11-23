@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <span>Total Clicks: </span>
+  <button id="btn">Click me</button>
+</body>
+<script>
+  let counter = 0; //가변 전역
+  const button = document.getElementById("btn"); //불변 지역
+  const span = document.querySelector("span");
+  function handleClick() {
+    counter += 1;
+    span.innerText = `Total Clicks: ` + counter;
+  }
+  button.addEventListener("click", handleClick);
+</script>
+</html>
