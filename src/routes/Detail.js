@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Detail() {
+  const navigate = useNavigate();
   const [detail, setDetail] = useState("");
   const { id } = useParams();
   console.log(id);
@@ -26,6 +27,7 @@ function Detail() {
           <li>runtime: {detail.runtime} min</li>
         </ul>
       </div>
+      <button onClick={() => {navigate(-1)}}>뒤로가기</button>
     </div>
   );
 }
